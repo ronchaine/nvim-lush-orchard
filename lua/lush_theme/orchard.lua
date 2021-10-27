@@ -77,6 +77,8 @@ local theme = lush(function()
   local boolean = hsl(300, 80, 55)
   local string = hsl(33, 35, 70)
 
+  local foldline = hsl(100, 100, 10)
+
   local orange = hsl(39, 100, 50)
   local green = hsl(120, 100, 25)
   local yellow = hsl(60, 100, 50)
@@ -119,7 +121,7 @@ local theme = lush(function()
     TabLine      { fg = purple }, -- tab pages line, not active tab page label
     TabLineSel   { fg = orange }, -- tab pages line, active tab page label
     TabLineFill  { Normal }, -- tab pages line, where there are no labels
-    Title        { fg = magenta, gui="bold" }, -- titles for output from ":set all", ":autocmd" etc.
+    Title        { fg = magenta.lighten(60), gui="bold" }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { fg = selection_fg, bg = almost_dark_background }, -- Visual mode selection
     VisualNOS    { fg = white.darken(50), bg = almost_dark_background }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = orange, gui="bold" }, -- warning messages
@@ -141,7 +143,7 @@ local theme = lush(function()
     -- TermCursor   { fg = cursor, bg = darkest }, -- cursor in a focused terminal
     -- TermCursorNC { TermCursor }, -- cursor in an unfocused terminal
     -- VertSplit    { }, -- the column separating vertically split windows
-    -- Folded       { }, -- line used for closed folds
+    Folded       { fg = green, bg = foldline }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
     -- SignColumn   { }, -- column where |signs| are displayed
     -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
